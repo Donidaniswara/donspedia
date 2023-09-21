@@ -1,0 +1,103 @@
+@use "../base/" as *;
+@use "../components/navbar";
+@use "../components/footer";
+
+.cek-invoice-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  margin-bottom: 8rem;
+
+  border-radius: 16px;
+  background: var(--gray-25, #fcfcfd);
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
+
+  width: max-content;
+
+  padding: 2.3125rem 3rem 2.625rem 3.0625rem;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  // justify-content: flex-start;
+}
+.form-title {
+  color: var(--gray-700, #344054);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  margin-bottom: 0.38rem;
+}
+.form-field {
+  position: relative;
+  margin-bottom: 1.38rem;
+}
+.form-field input {
+  padding: 0.62rem 0.88rem 0.62rem 2.63rem;
+  width: 42rem;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 20px 20px;
+
+  border-radius: 8px;
+  border: 1px solid var(--gray-300, #d0d5dd);
+  background: var(--white, #fff);
+
+  /* Shadow/xs */
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+}
+.form-field input[type="text"]::placeholder {
+  color: #999999;
+
+  color: var(--gray-400, #98a2b3);
+  font-size: 1rem;
+  font-family: Kanit;
+  font-weight: 300;
+  line-height: 1.5rem;
+}
+.form-field .icon {
+  position: absolute;
+  top: 50%;
+  left: 0.88rem;
+  transform: translateY(-50%);
+  color: #999999;
+}
+
+button.cek-invoice {
+  align-self: flex-end;
+  border-radius: 6px;
+  background: #ed2b2a;
+  padding: 0.625rem 2.5rem;
+
+  color: var(--gray-25, #fcfcfd);
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.75rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+
+  transition: 0.4s ease;
+
+  &:hover {
+    opacity: 0.7;
+    // transform: translateY(4px);
+  }
+}
+
+section.heading-invoice {
+  align-self: center;
+  margin-bottom: 1.88rem;
+
+  h1.heading-text {
+    color: var(--gray-900, #101828);
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 600;
+    line-height: 2.75rem;
+    letter-spacing: -0.045rem;
+  }
+}

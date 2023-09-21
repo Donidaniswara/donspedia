@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../src/css/main.css" />
+  <link rel="icon" href="../src/assets/donspedia-logo.svg">
+  <script src="./main.js" defer></script>
+  <title>Booster</title>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+
+  <nav>
+    <div class="parent-flex-outer">
+
+      <img class="logo-navbar" src="../src/assets/donspedia-logo.svg" alt="logo donspedia" />
+      <div class="nav-links">
+
+        <ul class="page-links">
+          <li><a href="/">Beranda</a></li>
+          <li><a class="active" href="./booster.html">Booster</a></li>
+        </ul>
+
+        <!-- Ubah no telp ke wa -->
+        <a class="k-kontak" href="https://api.whatsapp.com/send?phone=6285156790085">
+          <button class="contact-nav">Kontak</button>
+        </a>
+        <!--  -->
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Body Content -->
+
+  <section class="heading-booster">
+    <h1 class="heading-text">Booster</h1>
+  </section>
+
+  <section class="booster-container">
+    <form method="POST" action="/order">
+
+      <div class="form-left-container">
+        <h2 class="heading-form-left">Lengkapi Data</h2>
+
+
+        <label for="email-noHp">Email/No. Handphone</label><br />
+        <input type="text" id="email-noHp" name="email_noHp" placeholder="Masukkan Email/No. Handphone"
+          required /><br />
+
+        <label for="request-hero">Request Hero</label><br />
+        <input type="text" id="request-hero" name="request_hero" placeholder="Minimal Request 3 Hero" required /><br />
+
+        <label for="request-hero">User ID</label><br />
+        <input type="text" id="user-id" name="user_id" placeholder="Masukkan User ID" required /><br />
+
+        <label for="nickname">Nickname</label><br />
+        <input type="text" id="nickname" name="nickname" placeholder="Masukkan Nickname" required /><br />
+
+        <label for="password">Password</label><br />
+        <input type="text" id="password" name="password" placeholder="Masukkan Password" required /><br />
+
+        <label for="notes">Catatan Untuk Penjoki</label><br />
+        <textarea id="notes" name="notes" placeholder="Masukkan Catatan" rows="5"></textarea><br />
+
+        <label for="login">Log In Via</label><br>
+
+        <select name="login" id="loginVia" required>
+          <option value="default">Pilih Via Login</option>
+          <option value="Moonton">Moonton</option>
+          <option value="Facebook">Facebook</option>
+          <option value="Tik Tok">Tik Tok</option>
+        </select>
+
+      </div>
+
+      <div class="form-right-container">
+        <h2 class="form-right-heading">Pilih Paket Booster</h2>
+        <div class="grid-select-booster">
+          <% products.forEach(product=> { %>
+            <div class="input-container">
+              <input type="radio" name="select-booster" id="<%= product.no_produk %>"
+                value="<%= product.nama_produk %>">
+              <div class="radio-tile">
+                <label for="<%= product.id %>">
+                  <%= product.nama_produk %>
+                </label>
+                <p>Rp <%= product.harga %>
+                </p>
+              </div>
+            </div>
+            <% }) %>
+        </div>
+        <button type="button" class="submit-booster" onclick="openModal()">Order Sekarang</button>
+      </div>
+    </form>
+  </section>
+
+
+  <!-- Pop Up modal -->
+  <div class="modal-overlay" onclick="closeModal()" id="myModal">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h1 class="modal-title">Detail Pesanan</h1>
+      </div>
+      <div class="modal-body">
+        <h3 class="modal-subtitle">Mohon konfirmasi data anda sudah benar.</h3>
+        <div class="wrapper">
+          <div class="list-label">
+            <p class="modal-label">Email/No.Handphone:</p>
+            <p class="modal-label">Request Hero:</p>
+            <p class="modal-label">User ID:</p>
+            <p class="modal-label">Password:</p>
+            <p class="modal-label">Log In Via:</p>
+            <p class="modal-label">Paket Booster:</p>
+          </div>
+          <div class="list-value">
+            <p class="modal-value" data-field="EmailNoHp"></p>
+            <p class="modal-value" data-field="RequestHero"></p>
+            <p class="modal-value" data-field="UserId"></p>
+            <p class="modal-value" data-field="Password"></p>
+            <p class="modal-value" data-field="LoginVia"></p>
+            <p class="modal-value" id="product"></p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="wrapper">
+          <p>Total Pembayaran:</p>
+          <p class="value" id="harga"></p>
+        </div>
+        <div class="btn-wrapper">
+          <button type="button" class="modal-btn secondary" onclick="closeModal()">Batalkan</button>
+          <button type="button" class="modal-btn primary" onclick="handleSubmit()">Order sekarang</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+
+  <footer>
+    <div class="upper">
+      <div class="donspedia">
+        <img class="" src="./assets/donspedia-logo.svg" alt="" />
+        <p>
+          Penuhi Kebutuhan Gaming Mu Bersama Donspedia. Store Specialist Game
+          Mobile Legends No.1 Murah , Aman , Terpercaya Dan Legal 100% (Open
+          24 Jam) .
+        </p>
+      </div>
+
+      <div class="upper-nav">
+        <section class="two">
+          <h3>Social</h3>
+          <a href="">Instagram</a>
+          <a href="">LinkedIn</a>
+          <a href="">Facebook</a>
+        </section>
+      </div>
+    </div>
+
+    <div class="lower">
+      <p>© 2023 DONSPEDIA. All rights reserved.</p>
+      <div class="icons">
+        <img class="tw" src="../src/assets/twitter.svg" alt="" />
+        <img class="fb" src="../src/assets/facebook.svg" alt="" />
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+  <script src="../src/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+@use "./layout/beranda";
+@use "./layout/booster";
+@use "./layout/cek-invoice";
+@use "./layout/kontak";
+
+body {
+  background: #fcfcfd;
+  font-family: "Kanit", sans-serif;
+
+  display: flex;
+  flex-direction: column;
+}

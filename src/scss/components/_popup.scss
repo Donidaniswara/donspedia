@@ -1,0 +1,132 @@
+@use "../base/" as *;
+
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 100000;
+  justify-content: center;
+  visibility: hidden;
+
+  .modal {
+    opacity: 2;
+    position: relative;
+    align-self: center;
+
+    .modal-header {
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+      background-color: #ed2b2a;
+      padding-inline: 30px;
+      padding-block: 21px;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+      .modal-title {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 32px;
+        color: #fcfcfd;
+      }
+    }
+
+    .modal-body {
+      background-color: #fcfcfd;
+      padding-inline: 30px;
+      padding-block: 20px;
+      .modal-subtitle {
+        color: #98a2b3;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px;
+      }
+      .wrapper {
+        display: flex;
+        gap: 46px;
+
+        .list-value,
+        .list-label {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          margin-top: 32px;
+        }
+
+        p {
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 28px;
+        }
+        .modal-label {
+          color: #98a2b3;
+        }
+
+        .modal-value {
+          color: #101828;
+        }
+      }
+    }
+    .modal-footer {
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+      background-color: #f2f4f7;
+      padding: 30px;
+
+      .wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 166px;
+
+        p {
+          font-size: 24px;
+          font-family: Kanit;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 32px;
+        }
+
+        .value {
+          color: #ed2b2a;
+        }
+      }
+      .btn-wrapper {
+        margin-top: 56px;
+        justify-content: flex-end;
+        display: flex;
+        gap: 10px;
+
+        .modal-btn {
+          border-radius: 6px;
+          padding-inline: 30px;
+          padding-block: 8px;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 28px;
+          cursor: pointer;
+        }
+
+        .secondary {
+          background-color: #f2f4f7;
+          border: 1px solid #ed2b2a;
+          color: #ed2b2a;
+
+          &:active {
+            background-color: #c6c7c9;
+          }
+        }
+        .primary {
+          background-color: #ed2b2a;
+          border: 1px solid #ed2b2a;
+          color: #fcfcfd;
+          &:active {
+            background-color: #af1a1a;
+          }
+        }
+      }
+    }
+  }
+}

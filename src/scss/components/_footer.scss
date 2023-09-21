@@ -1,0 +1,82 @@
+@use "../base/" as *;
+
+footer {
+  border-top: 0.1px solid rgba(128, 128, 128, 0.301);
+
+  .upper {
+    margin-inline: 7rem;
+    margin-top: 4rem;
+    margin-bottom: 7rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .donspedia {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      gap: 2rem;
+      img {
+        height: 2.22rem;
+      }
+      p {
+        max-width: 30ch;
+        color: var(--gray-800, #1d2939);
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
+    }
+
+    .upper-nav {
+      display: flex;
+
+      section {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 1rem;
+
+        width: 13.625rem;
+
+        & * {
+          text-decoration: none;
+        }
+
+        h3 {
+          font-size: 0.875rem;
+          font-weight: 600;
+          line-height: 1.25rem;
+        }
+
+        a {
+          color: var(--gray-400, #98a2b3);
+          font-size: 1rem;
+          line-height: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .lower {
+    padding: 3rem 7rem;
+    background-color: #ed2b2a;
+
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      color: var(--gray-25, #fcfcfd);
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    .icons {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+}
